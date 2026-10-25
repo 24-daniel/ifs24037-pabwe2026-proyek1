@@ -1,18 +1,19 @@
 <script setup>
 import { useId } from "vue";
 
-defineProps({
+const props = defineProps({ // ← BARU: ditambah "const props ="
   label: { type: String, required: true },
   error: { type: String, default: "" },
   as: { type: String, default: "input" },
   type: { type: String, default: "text" },
   required: Boolean,
   name: { type: String, default: undefined },
+  id: { type: String, default: undefined }, // ← BARU
   autocomplete: { type: String, default: undefined },
 });
 
 const model = defineModel({ type: String, default: "" });
-const id = useId();
+const id = props.id ?? useId(); // ← BARU
 </script>
 
 <template>
