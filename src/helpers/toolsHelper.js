@@ -3,6 +3,9 @@ const toDate = (isoDate) => new Date(`${isoDate}T00:00:00`);
 export const formatDate = (isoDate) =>
   new Intl.DateTimeFormat("id-ID", { weekday: "long", day: "numeric", month: "long", year: "numeric" }).format(toDate(isoDate));
 
+export const formatMonthYear = (yearMonth) =>
+  new Intl.DateTimeFormat("id-ID", { month: "long", year: "numeric" }).format(toDate(`${yearMonth}-01`));
+
 export const formatDay = (isoDate) => toDate(isoDate).getDate();
 
 export const formatMonthShort = (isoDate) =>

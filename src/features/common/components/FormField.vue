@@ -7,6 +7,8 @@ defineProps({
   as: { type: String, default: "input" },
   type: { type: String, default: "text" },
   required: Boolean,
+  name: { type: String, default: undefined },
+  autocomplete: { type: String, default: undefined },
 });
 
 const model = defineModel({ type: String, default: "" });
@@ -24,6 +26,8 @@ const id = useId();
       :value="model"
       :type="as === 'input' ? type : undefined"
       :required="required"
+      :name="name"
+      :autocomplete="autocomplete"
       :aria-invalid="Boolean(error)"
       :aria-describedby="error ? `${id}-error` : undefined"
       class="w-full rounded-lg border border-slate-400 bg-white px-3 py-2"

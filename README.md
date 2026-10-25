@@ -25,3 +25,6 @@ Jalankan backend lebih dulu (lihat README backend).
 2. `VITE_API_BASEURL=https://<api-kamu>/api/v1` (tanpa garis miring di akhir) diisi sebelum build. Build production akan gagal jika kosong.
 3. Di backend, `CORS_ORIGIN` berisi URL frontend ini.
 4. Buka halaman Jadwal: daftar kegiatan muncul dan tombol Tambah berhasil menyimpan.
+
+## Login dan daftar
+Daftar di `/auth/register`, masuk di `/auth/login`. Halaman yang butuh login: `/dashboard`, `/kelola`, `/laporan`, `/profil`.
