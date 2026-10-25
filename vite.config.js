@@ -18,6 +18,15 @@ export default defineConfig(({ mode }) => {
     define: {
       API_BASEURL: JSON.stringify(env.VITE_API_BASEURL || "http://localhost:8000/api/v1"),
     },
-    test: { globals: true, environment: "jsdom" },
+    test: {
+      globals: true,
+      environment: "jsdom",
+      coverage: {
+        provider: "v8",
+        reporter: ["text", "lcov"],
+        include: ["src/**/*.js"],
+        exclude: ["src/main.js", "src/router.js", "**/constants.js", "**/*.test.js"],
+      },
+    },
   };
 });
